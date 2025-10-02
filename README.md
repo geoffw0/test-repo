@@ -1,5 +1,5 @@
 # test-repo
-Test repository for fiddling with things like Code Scanning settings
+Test repository for fiddling with things like Code Scanning settings.
 
 ## Rust Hello World Project
 
