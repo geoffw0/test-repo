@@ -2,7 +2,6 @@
 mod defs;
 use defs::myMacro;
 use reqwest;
-use md5::{Digest};
 
 fn main() {
     // use some macros
@@ -18,11 +17,11 @@ fn main() {
     println!("web data = {page_data}");
 
     // weak hashing
-    let digest = format!("{:x}", md5::Md5::digest(password));
+    let digest = format!("{:x}", md5::compute(password));
     println!("digest = {digest}");
 
     // uncontrolled allocation size
-    let size = digest.to_string().parse::<usize>().unwrap_or(1024);
+    let size = page_data.parse::<usize>().unwrap_or(1024);
     println!("size = {size}");
     let layout = std::alloc::Layout::from_size_align(size, 1).unwrap();
 
