@@ -3,9 +3,29 @@ mod defs;
 use defs::myMacro;
 use reqwest;
 
+fn my_function() {
+    println!("Hello from my_function.");
+}
+
+// conditional compilation
+#[cfg(false)]
+fn not_compiled_function() {
+    println!("Hello from not_compiled_function.");
+    my_function();
+    my_function();
+    my_function();
+    my_function();
+    my_function();
+    myMacro!();
+    myMacro!();
+    myMacro!();
+    myMacro!();
+    myMacro!();
+}
+
 fn main() {
-    // use some macros
-    println!("Hello, world!");
+    println!("Hello from main.");
+    my_function();
     myMacro!();
 
     // cleartext logging
@@ -34,4 +54,6 @@ fn main() {
         let data2 = *ptr;
         println!("data2 = {data2}");
     }
+
+    println!("end.");
 }
