@@ -7,6 +7,11 @@ fn my_function() {
     println!("Hello from my_function.");
 }
 
+fn set_password(password: &str) {
+    let _password = password;
+    // ...
+}
+
 // conditional compilation
 #[cfg(false)]
 fn not_compiled_function() {
@@ -54,6 +59,10 @@ fn main() {
         let data2 = *ptr;
         println!("data2 = {data2}");
     }
+
+    // constant password
+    let pwd = "123456";
+    set_password(pwd);
 
     println!("end.");
 }
