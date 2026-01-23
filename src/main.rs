@@ -16,7 +16,12 @@ fn set_password(password: &str) {
 // Hard-coded cryptographic value example (BAD - triggers CodeQL alert)
 fn hardcoded_crypto_example() {
     // BAD: Using hard-coded key for encryption
-    let key: [u8; 32] = [0; 32]; // Hard-coded key
+    let key: [u8; 32] = [
+        0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef,
+        0xfe, 0xdc, 0xba, 0x98, 0x76, 0x54, 0x32, 0x10,
+        0x0f, 0x1e, 0x2d, 0x3c, 0x4b, 0x5a, 0x69, 0x78,
+        0x87, 0x96, 0xa5, 0xb4, 0xc3, 0xd2, 0xe1, 0xf0,
+    ]; // Hard-coded key
     let _cipher = Aes256Gcm::new(&key.into());
     println!("Created cipher with hard-coded key (BAD practice!)");
 }
