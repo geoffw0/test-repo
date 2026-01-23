@@ -2,6 +2,7 @@
 mod defs;
 use defs::myMacro;
 use reqwest;
+use aes_gcm::{Aes256Gcm, KeyInit};
 
 fn my_function() {
     println!("Hello from my_function.");
@@ -10,6 +11,14 @@ fn my_function() {
 fn set_password(password: &str) {
     let _password = password;
     // ...
+}
+
+// Hard-coded cryptographic value example (BAD - triggers CodeQL alert)
+fn hardcoded_crypto_example() {
+    // BAD: Using hard-coded key for encryption
+    let key: [u8; 32] = [0; 32]; // Hard-coded key
+    let _cipher = Aes256Gcm::new(&key.into());
+    println!("Created cipher with hard-coded key (BAD practice!)");
 }
 
 // conditional compilation
@@ -63,6 +72,9 @@ fn main() {
     // constant password
     let pwd = "123456";
     set_password(pwd);
+
+    // Hard-coded cryptographic value (triggers CodeQL alert)
+    hardcoded_crypto_example();
 
     println!("end.");
 }
