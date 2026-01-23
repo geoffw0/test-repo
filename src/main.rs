@@ -13,7 +13,7 @@ fn set_password(password: &str) {
     // ...
 }
 
-// Hard-coded cryptographic value example (BAD - triggers CodeQL alert)
+// Hard-coded cryptographic value example
 fn hardcoded_crypto_example() {
     // BAD: Using hard-coded key for encryption
     let key: [u8; 32] = [
@@ -78,7 +78,7 @@ fn main() {
     let pwd = "123456";
     set_password(pwd);
 
-    // Hard-coded cryptographic value (triggers CodeQL alert)
+    // hard-coded cryptographic value
     hardcoded_crypto_example();
 
     println!("end.");
