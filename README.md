@@ -42,7 +42,7 @@ make run
 
 ## Java CodeQL Quality Fixture
 
-The Java source includes two labeled code quality examples and no intentional security vulnerabilities.
+The Java source includes labeled code quality examples.
 
 ### Prerequisites
 - Java 17 and Maven
