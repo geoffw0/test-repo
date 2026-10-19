@@ -39,3 +39,20 @@ make
 ```bash
 make run
 ```
+
+## Java CodeQL Quality Fixture
+
+The Java source includes two labeled code quality examples and no intentional security vulnerabilities.
+
+### Prerequisites
+- Java 17 and Maven
+
+### Building
+```bash
+mvn package
+```
+
+### Running
+```bash
+java -cp target/classes Main
+```
