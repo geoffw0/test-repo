@@ -22,3 +22,20 @@ cargo run
 ```bash
 cargo test
 ```
+
+## C++ CodeQL Test Fixture
+
+The C++ source includes examples of code quality issues for CodeQL query testing.
+
+### Prerequisites
+- A C++ compiler and `make`
+
+### Building
+```bash
+make
+```
+
+### Running
+```bash
+make run
+```
